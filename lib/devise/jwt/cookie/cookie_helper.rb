@@ -2,7 +2,7 @@ module Devise
   module JWT
     module Cookie
       class CookieHelper
-        include Cookie::Import['name', 'domain', 'secure']
+        include Cookie::Import['name', 'domain', 'secure', 'httponly','same_site']
 
         def build(token)
           if token.nil?
@@ -23,8 +23,9 @@ module Devise
           res = {
             value: token,
             path: '/',
-            httponly: true,
-            secure: secure,
+            httponly:,
+            secure:,
+            same_site:,
             expires: Time.at(jwt['exp'].to_i)
           }
           res[:domain] = domain if domain.present?
@@ -35,8 +36,8 @@ module Devise
           res = {
             value: nil,
             path: '/',
-            httponly: true,
-            secure: secure,
+            httponly:,
+            secure:,
             max_age: '0',
             expires: Time.at(0)
           }
