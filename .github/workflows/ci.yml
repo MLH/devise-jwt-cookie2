@@ -42,4 +42,4 @@ jobs:
           use_bundler: true
           rubocop_version: gemfile
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          fail_on_error: true
+          fail_level: error

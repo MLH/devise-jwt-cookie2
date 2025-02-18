@@ -39,6 +39,7 @@ Gem::Specification.new do |spec|
   # Cops
   spec.add_development_dependency 'mlh-rubocop-config'
   spec.add_development_dependency 'rubocop', '~> 1.0'
+  spec.add_development_dependency 'rubocop-rake'
   # Test reporting
   spec.add_development_dependency 'simplecov', '0.17'
 end
