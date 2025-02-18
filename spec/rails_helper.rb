@@ -37,4 +37,4 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 end
 
-Rails.application.eager_load! if ENV["COVERAGE"]
+Rails.application.eager_load! if ENV['COVERAGE']

@@ -5,14 +5,15 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'devise/jwt/cookie/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'devise-jwt-cookie'
+  spec.name          = 'devise-jwt-cookie2'
   spec.version       = Devise::JWT::Cookie::VERSION
-  spec.authors       = ['Niels van der Zanden', 'Major League Hacking']
-  spec.email         = ['niels@pharynx.nl', 'hi@mlh.io']
+  spec.authors       = ['Major League Hacking']
+  spec.email         = ['hi@mlh.io']
 
   spec.summary       = 'Cookie-based JWT authentication for devise'
-  spec.description   = 'Cookie-based JWT authentication for devise with configurable token revocation strategies'
-  spec.homepage      = 'https://github.com/mlh/devise-jwt-cookie'
+  spec.description   = 'Cookie-based JWT authentication for devise with configurable token revocation strategies, ' \
+                       'forked from devise-jwt-cookie'
+  spec.homepage      = 'https://github.com/mlh/devise-jwt-cookie2'
   spec.license       = 'MIT'
 
   spec.required_ruby_version = '>= 2.7.0'
@@ -39,6 +40,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'mlh-rubocop-config'
   spec.add_development_dependency 'rubocop', '~> 1.0'
   # Test reporting
-  spec.add_development_dependency 'codeclimate-test-reporter', '~> 1.0'
   spec.add_development_dependency 'simplecov', '0.17'
 end

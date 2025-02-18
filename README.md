@@ -1,13 +1,13 @@
 # Devise::JWT::Cookie
 
-`devise-jwt-cookie` is a [devise](https://github.com/plataformatec/devise) extension based on [devise-jwt](https://github.com/waiting-for-dev/devise-jwt). It should be used alongside `devise-jwt`.
+`devise-jwt-cookie2` is a fork of [devise-jwt-cookie](https://github.com/scarhand/devise-jwt-cookie), a [devise](https://github.com/plataformatec/devise) extension based on [devise-jwt](https://github.com/waiting-for-dev/devise-jwt). It should be used alongside `devise-jwt`.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'devise-jwt-cookie', '~> 0.4.0'
+gem 'devise-jwt-cookie2', '~> 0.6.0'
 ```
 
 And then execute:
@@ -46,15 +46,23 @@ Devise.setup do |config|
 end
 ```
 
-#### name
+#### name ([MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies#name))
 
 The name of the cookie. Defaults to `access_token`.
 
-#### domain
+#### secure ([MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies#secure))
+
+If a secure cookie should be set, this means the cookie must be sent over a secure connection. Defaults to `true`.
+
+#### httponly ([MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies#httponly))
+
+HttpOnly option on the cookie, if set to true JavaScript running in the browser cannot access the cookie. 
+Defaults to `true`
+
+#### domain ([MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies#domain))
 
 The domain the cookie should be issued to. Will be omitted if not set.
 
-#### secure
+#### same_site ([MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies#samesite))
 
-If a secure cookie should be set, this means the cookie must be sent over a secure connection. Defaults to true.
-
+Set's the SameSite attribute on the cookie. Defaults to `none`.

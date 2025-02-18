@@ -33,4 +33,3 @@ shared_context 'feature' do
     Devise::JWT::Cookie.config.name
   end
 end
-
