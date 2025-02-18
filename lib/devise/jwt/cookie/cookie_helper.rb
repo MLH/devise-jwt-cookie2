@@ -26,7 +26,7 @@ module Devise
           res = {
             value: token,
             **global_options,
-            expires: Time.zone.at(jwt['exp'].to_i)
+            expires: Time.at(jwt['exp'].to_i)
           }
           [name, res]
         end
@@ -36,7 +36,7 @@ module Devise
             value: nil,
             **global_options,
             max_age: '0',
-            expires: Time.zone.at(0)
+            expires: Time.at(0)
           }
           [name, res]
         end

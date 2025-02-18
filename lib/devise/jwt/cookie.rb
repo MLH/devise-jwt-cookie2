@@ -2,6 +2,8 @@
 
 require 'dry/configurable'
 require 'dry/auto_inject'
+require 'devise'
+require 'devise/jwt'
 require 'devise/jwt/cookie/strategy'
 
 # Authentication library

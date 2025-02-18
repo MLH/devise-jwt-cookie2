@@ -1,0 +1,15 @@
+inherit_gem:
+  mlh-rubocop-config: .rubocop.yml
+
+AllCops:
+  # Ruby 2.7 is the MINIMUM Ruby version supported
+  TargetRubyVersion: '2.7.0'
+  Exclude:
+    - spec/fixtures/rails_app/bin/**/*
+    - spec/fixtures/rails_app/db/schema.rb
+    - spec/fixtures/rails_app/vendor/**/*
+  NewCops: disable
+  SuggestExtensions: false
+
+Rails/TimeZone:
+  Enabled: false
