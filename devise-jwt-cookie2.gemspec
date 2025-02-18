@@ -33,8 +33,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec'
   # Needed to test the rails fixture application
-  spec.add_development_dependency 'rails', '~> 7.0'
-  spec.add_development_dependency 'rspec-rails', '~> 7.0'
+  spec.add_development_dependency 'rails', '~> 7.1.0'
+  spec.add_development_dependency 'rspec-rails', '~> 7.1.0'
   spec.add_development_dependency 'sqlite3', '~> 2.0'
   # Cops
   spec.add_development_dependency 'mlh-rubocop-config'
