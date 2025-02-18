@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class InitialiseSchemaFromDeviseJwtFixtures < ActiveRecord::Migration[7.2]
+class InitialiseSchemaFromDeviseJwtFixtures < ActiveRecord::Migration[7.1]
   def change
     create_table 'allowlisted_jwts', force: :cascade do |t|
       t.string 'jti', null: false
