@@ -22,5 +22,23 @@ jobs:
           bundler-cache: true
       - name: Run Spec
         run: bundle exec rake spec
-      - name: Run Rubocop
-        run: bundle exec rake rubocop
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout Repository
+
+      - uses: ruby/setup-ruby@v1
+        name: Setup Ruby
+        with:
+          bundler-cache: true
+
+      - name: Rubocop
+        uses: reviewdog/action-rubocop@v2
+        with:
+          skip_install: true
+          use_bundler: true
+          rubocop_version: gemfile
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
