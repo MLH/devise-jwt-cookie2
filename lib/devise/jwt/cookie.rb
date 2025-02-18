@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'dry/configurable'
 require 'dry/auto_inject'
 require 'devise/jwt/cookie/strategy'
@@ -11,6 +13,7 @@ module Devise
   add_module(:jwt_cookie_authenticatable, strategy: :jwt_cookie)
 
   module JWT
+    # Devise extension for adding cookie support on top of devise-jwt
     module Cookie
       extend Dry::Configurable
 

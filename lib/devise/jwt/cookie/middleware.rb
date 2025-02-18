@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 module Devise
   module JWT
     module Cookie
+      # Rack middleware to handle JWT token in cookies
       class Middleware
         ENV_KEY = 'warden-jwt_auth.token'
 
