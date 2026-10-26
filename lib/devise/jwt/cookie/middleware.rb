@@ -6,6 +6,7 @@ module Devise
       # Rack middleware to handle JWT token in cookies
       class Middleware
         ENV_KEY = 'warden-jwt_auth.token'
+        REFRESHED_TOKEN_KEY = 'devise-jwt-cookie.refreshed_token'
 
         attr_reader :app, :config
 
@@ -29,6 +30,9 @@ module Devise
             Rack::Utils.set_cookie_header!(headers, name, cookie)
           elsif token_should_be_revoked
             name, cookie = CookieHelper.new.build(nil)
+            Rack::Utils.set_cookie_header!(headers, name, cookie)
+          elsif env[REFRESHED_TOKEN_KEY]
+            name, cookie = CookieHelper.new.build(env[REFRESHED_TOKEN_KEY])
             Rack::Utils.set_cookie_header!(headers, name, cookie)
           end
           [status, headers, response]
