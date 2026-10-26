@@ -1,0 +1,33 @@
+lib/devise/jwt/cookie/refresher.rb
+  s_6a6a8054435533::t_edbaf8909577fe 1-42
+lib/devise/jwt/cookie/strategy.rb
+  s_6a6a8054435533::t_9c3afd731e5e22 12,20-23,36-48
+spec/features/token_refresh_spec.rb
+  s_6a6a8054435533::t_368d38b2381851 1-86
+Gemfile.lock
+  s_6a6a8054435533::t_21437b41498545 4
+README.md
+  s_6a6a8054435533::t_2fae18252cf9cc 10,69-82
+lib/devise/jwt/cookie/middleware.rb
+  s_6a6a8054435533::t_606e2bfb935b1d 9,34-36
+lib/devise/jwt/cookie/version.rb
+  s_6a6a8054435533::t_ddaeccece33543 6
+lib/devise/jwt/cookie2.rb
+  s_6a6a8054435533::t_69e97c3e0f678d 27,38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a86c8060038fe3afb11908bc3f6a100a1f23b53f",
+  "prompts": {},
+  "sessions": {
+    "s_6a6a8054435533": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d5527f06-b4bb-4e3e-a890-c6f8e00cb9ba",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jonathan Gottfried <jonmarkgo@gmail.com>"
+    }
+  }
+}
