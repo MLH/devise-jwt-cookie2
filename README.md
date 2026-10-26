@@ -7,7 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'devise-jwt-cookie2', '~> 0.6.0'
+gem 'devise-jwt-cookie2', '~> 0.7.0'
 ```
 
 And then execute:
@@ -66,3 +66,17 @@ The domain the cookie should be issued to. Will be omitted if not set.
 #### same_site ([MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies#samesite))
 
 Set's the SameSite attribute on the cookie. Defaults to `none`.
+
+#### refresher
+
+An object that renews the JWT while the cookie strategy authenticates a request. Defaults to `nil`, which never renews a token.
+
+Set it to `Devise::JWT::Cookie::Refresher.new` to re-issue a still-valid token once it is past half its lifetime, so an active user's cookie slides forward instead of expiring:
+
+```ruby
+config.jwt_cookie do |jwt_cookie|
+  jwt_cookie.refresher = Devise::JWT::Cookie::Refresher.new
+end
+```
+
+A refresher responds to `call(token, scope, env)`, where `token` is the cookie's JWT (`nil` when the request has none), and returns a new JWT or `nil` to keep the current one. The strategy authenticates the request with the returned token and the middleware writes it to the cookie, unless the request revokes the token. Subclass `Refresher` to supply your own rules, such as recovering a session from a separate refresh credential after the JWT has expired, or capping a session's total lifetime. The private `issue(user, scope, aud)` helper encodes a token and calls the model's `on_jwt_dispatch`, so revocation strategies such as `Allowlist` record it.

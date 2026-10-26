@@ -24,6 +24,7 @@ module Devise
       setting :httponly, default: true
       setting :same_site, default: :none
       setting :domain
+      setting :refresher
 
       Import = Dry::AutoInject(config)
     end
@@ -34,4 +35,5 @@ require 'devise/jwt/cookie/version'
 require 'devise/jwt/cookie/railtie'
 require 'devise/jwt/cookie/cookie_helper'
 require 'devise/jwt/cookie/middleware'
+require 'devise/jwt/cookie/refresher'
 require 'devise/jwt/cookie/models'
