@@ -36,10 +36,4 @@ jobs:
           bundler-cache: true
 
       - name: Rubocop
-        uses: reviewdog/action-rubocop@v2
-        with:
-          skip_install: true
-          use_bundler: true
-          rubocop_version: gemfile
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          fail_level: error
+        run: bundle exec rubocop
